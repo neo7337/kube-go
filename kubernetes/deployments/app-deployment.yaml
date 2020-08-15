@@ -16,6 +16,13 @@ spec:
       - name: go-k8s
         image: neo73/kube-go
         imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
           - name: http
             containerPort: 9191
