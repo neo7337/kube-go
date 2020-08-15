@@ -26,10 +26,11 @@ kubectl apply -f kubernetes/services/app-services.yaml
 kubectl get services
 ```
 ## Testing the running pods
-Port forward the running service in order to test the running pod
+Port forward the running service in order to test the running pod\
 Get the pod name from the kubectl get pods
+```
 kubectl port-forward <pod_name> new_port:pod's port
-
+```
 ## Deleting the pods and services
 ```
 kubectl delete deployment <deployment_name>
