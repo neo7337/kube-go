@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.gok8s.name }}
+spec:
+  type: {{ .Values.gok8s.serviceType }}
+  ports:
+  - name: {{ .Values.gok8s.portname }}
+    port: {{ .Values.gok8s.proxyPort }}
+    targetPort: {{ .Values.gok8s.targetPort }}
+  selector:
+    app: {{ .Values.gok8s.name }}
