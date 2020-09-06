@@ -1,7 +1,7 @@
 # kube-go
 
 a go server to be deployed to kubernetes\
-kubernetes commands\
+kubernetes commands
 
 ## Creating a deployment on kubernetes
 ```
