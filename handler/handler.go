@@ -1,10 +1,12 @@
 package handler
 
 import (
-	"fmt"
-	"log"
 	"net/http"
+
+	"github.com/appmanch/go-commons/logging"
 )
+
+var logger = logging.GetLogger()
 
 //HomeHandler -> Base Endpoint
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
@@ -13,16 +15,18 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	if name == "" {
 		name = "Guest"
 	}
-	log.Printf("Received Request for %s\n", name)
-	w.Write([]byte(fmt.Sprintf("Hello, %s\n", name)))
+	loger.InfoF("Received Request for %s\n", name)
+	w.Write([]byte(logger.InfoF("Hello, %s\n", name)))
 }
 
 //HealthCheck -> health check
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
+	logger.InfoF("Invoking Health checks : %s\n", r.URL.Query())
 	w.WriteHeader(http.StatusOK)
 }
 
 //ReadinessCheck -> readiness check
 func ReadinessCheck(w http.ResponseWriter, r *http.Request) {
+	logger.InfoF("Invoking Readiness checks : %s\n", r.URL.Query())
 	w.WriteHeader(http.StatusOK)
 }

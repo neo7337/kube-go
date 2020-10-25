@@ -3,15 +3,17 @@ package main
 import (
 	"context"
 	"kube-go-app/handler"
-	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
 
+	"github.com/appmanch/go-commons/logging"
 	"github.com/gorilla/mux"
 )
+
+var logger = logging.GetLogger()
 
 func main() {
 	r := mux.NewRouter()
@@ -28,9 +30,9 @@ func main() {
 	}
 
 	go func() {
-		log.Println("Starting Server")
+		logger.InfoF("Starting Server")
 		if err := srv.ListenAndServe(); err != nil {
-			log.Fatal(err)
+			logger.ErrorF(err)
 		}
 	}()
 
@@ -47,6 +49,6 @@ func waitForShutdown(srv *http.Server) {
 	defer cancel()
 	srv.Shutdown(ctx)
 
-	log.Println("Shutting Down")
+	logger.InfoF("Shutting Down")
 	os.Exit(0)
 }
