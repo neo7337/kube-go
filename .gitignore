@@ -1,1 +1,3 @@
 .DS_Store
+kubernetes/k8schart/prometheus/requirements.lock
+kubernetes/k8schart/prometheus/charts/kube-state-metrics-2.8.14.tgz
