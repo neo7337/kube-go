@@ -1,6 +1,10 @@
 gok8s:
   name: go-k8s
   environment: dev
+  metadata:
+    prometheusScrape: "true"
+    prometheusPath: /metrics
+    prometheusPort: "8080"
   repository:
     image: neo73/kube-go
     imagePullPolicy: IfNotPresent

@@ -14,6 +14,10 @@ spec:
     metadata:
       labels:
         app: {{ .Values.gok8s.name }}
+      annotations:
+        prometheus.io/scrape: {{ quote .Values.gok8s.metadata.prometheusScrape }}
+        prometheus.io/path: {{ .Values.gok8s.metadata.prometheusPath }}
+        prometheus.io/port: {{ quote .Values.gok8s.metadata.prometheusPort }}
     spec:
       containers:
       - name: {{ .Values.gok8s.name }}
