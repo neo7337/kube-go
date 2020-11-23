@@ -4,7 +4,7 @@ gok8s:
   metadata:
     prometheusScrape: "true"
     prometheusPath: /metrics
-    prometheusPort: "8080"
+    prometheusPort: "9191"
   repository:
     image: neo73/kube-go
     imagePullPolicy: IfNotPresent

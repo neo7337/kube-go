@@ -12,15 +12,6 @@ sources:
   - https://github.com/prometheus/node_exporter
   - https://github.com/kubernetes/kube-state-metrics
 maintainers:
-  - name: gianrubio
-    email: gianrubio@gmail.com
-  - name: zanhsieh
-    email: zanhsieh@gmail.com
-  - name: Xtigyro
-    email: miroslav.hadzhiev@gmail.com
-  - name: monotek
-    email: monotek23@gmail.com
-  - name: naseemkullah
-    email: naseem@transit.app
+  - name: neo7337
 engine: gotpl
 tillerVersion: ">=2.8.0"
