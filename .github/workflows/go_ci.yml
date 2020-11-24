@@ -25,6 +25,9 @@ jobs:
 
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
+      
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Get dependencies
         run: |
@@ -53,4 +56,4 @@ jobs:
 
       - name: Docker Build
         run: |
-          sh ./pushToDocker.sh
+          sh ./pushToDocker.sh ${{ env.RELEASE_VERSION }}
