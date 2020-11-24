@@ -1,5 +1,7 @@
 # kube-go
 
+![Build_CI](https://github.com/neo7337/kube-go/workflows/Build_CI/badge.svg)
+
 a go server to be deployed to kubernetes\
 kubernetes commands
 
@@ -39,7 +41,9 @@ kubectl delete service <service_name>
 ```
 minikube service <serviceName> --url
 ```
+
 # Deployment using Helm Charts
+Helm Charts Used [Link](https://github.com/neo7337/my-charts)
 - Create helm chart
 ```
 helm create <chartName>
