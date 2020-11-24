@@ -2,8 +2,8 @@
 
 set -e
 
-if [[ $# -lt 1 ]]; then
-    echo "Tag ref not present, exiting script execution"
+if [ $# -lt 2 ]; then
+    echo "Correct Input <<USERNAME>> <<TAG REF>> not present, exiting script execution"
     exit 1
 fi
 
