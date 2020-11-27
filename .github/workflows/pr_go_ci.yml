@@ -46,4 +46,4 @@ jobs:
 
       - name: Docker Build
         run: |
-          sh ./pushToDocker.sh ${{ secrets.DOCKER_USERNAME }} ${{ env.RELEASE_VERSION }} ${{ github.event_name }}
+          sh ./pushToDocker.sh "tst" "PR" ${{ github.event_name }}
