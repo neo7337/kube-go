@@ -6,8 +6,6 @@ ADD . /kube-go-app
 
 WORKDIR /kube-go-app
 
-RUN ls -lrt
-
 RUN go mod download
 
 COPY . .
