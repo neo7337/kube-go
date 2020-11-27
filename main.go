@@ -70,7 +70,7 @@ func main() {
 
 	go func() {
 		log.Printf("Server Started")
-		log.Printf("Starting to Collecting Metrics")
+		log.Printf("Starting to Collecting Metrics for Prometheus")
 		if err := srv.ListenAndServe(); err != nil {
 			log.Fatal(err)
 		}
@@ -97,6 +97,6 @@ func waitForShutdown(srv *http.Server) {
 	defer cancel()
 	srv.Shutdown(ctx)
 
-	log.Printf("Shutting Down")
+	log.Printf("Shutting Down Server")
 	os.Exit(0)
 }
