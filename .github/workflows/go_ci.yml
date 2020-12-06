@@ -35,6 +35,12 @@ jobs:
 
       - name: Build
         run: go build -v ./...
+      
+      - name: Clean Lib
+        run: rm -rf ./lib
+
+      - name: Lib Build
+        run: GOOS=linux GOARCH=amd64 go build -o ./lib/main main.go
 
       - name: Test
         run: go test -v ./...
